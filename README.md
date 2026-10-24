@@ -101,8 +101,8 @@ Quiz de múltipla escolha e cards de memorização para se preparar em entrevist
 ## 📂 Estrutura
 
 ```
-quiz-trilha/
-├── index.html      # O quiz (renomeado para GitHub Pages)
+projeto-profissional/
+├── index.html      # O quiz
 ├── README.md
 └── .gitignore
 ```
@@ -114,3 +114,5 @@ quiz-trilha/
 Projeto criado como ferramenta de estudo para entrevistas técnicas. Pode ser usado para qualquer vaga de desenvolvimento - basta focar nas matérias relevantes.
 
 Feito por **Welry Sanbey**
+
+**▶ [Acesse o Quiz](https://leona-benye.github.io/projeto-profissional/)**
