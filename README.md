@@ -4,7 +4,7 @@ Quiz de múltipla escolha e cards de memorização para se preparar em entrevist
 
 ## 🚀 Acesse o Quiz
 
-**▶ [Clique aqui para abrir o Quiz](https://welrysanbey.github.io/quiz-trilha/)**
+**▶ [Clique aqui para abrir o Quiz](https://leona-benye.github.io/projeto-profissional/)**
 
 > Funciona no celular e no computador. Seu histórico fica salvo no navegador.
 
