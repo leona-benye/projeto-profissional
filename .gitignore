@@ -1,0 +1,31 @@
+# ===== Dados pessoais (NUNCA subir) =====
+notas/
+Anotaçoes/
+curriculo*
+*.pdf
+Preparacao-Trilha/
+Trilha - Bate papo*
+
+# ===== Sistema =====
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# ===== Editores =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== Node (caso use no futuro) =====
+node_modules/
+npm-debug.log*
+
+# ===== Build =====
+dist/
+build/
+*.log
+
+# ===== Arquivo duplicado (só index.html vai pro Pages) =====
+quiz.html
