@@ -12,8 +12,14 @@
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;min-height:100dvh;padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom));background-image:radial-gradient(ellipse at 50% 0%,rgba(56,189,248,.06) 0%,transparent 60%)}
 .container{max-width:800px;margin:0 auto}
 h1{font-size:1.6rem;margin-bottom:6px;color:var(--accent);letter-spacing:-.5px}
-h1::before{content:"⚡ ";}
 h2{font-size:1.15rem;margin-bottom:14px;color:var(--accent)}
+.ic{width:1em;height:1em;display:inline-block;vertical-align:-.15em;fill:currentColor;flex:none}
+.ic-stroke{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic-r{margin-right:.4em}
+.ic-l{margin-left:.4em}
+h1 .ic{width:1.05em;height:1.05em;margin-right:.3em}
+h2 .ic{margin-right:.25em}
+.btn .ic{width:1.05em;height:1.05em}
 p{color:var(--muted);line-height:1.6}
 .screen{display:none;animation:fadeIn .25s ease}
 .screen.active{display:block}
@@ -109,7 +115,7 @@ th,td{padding:8px 6px;font-size:.78rem}
 <!-- ============ TELA INICIAL ============ -->
 <div class="screen active" id="screen-home">
   <div class="header-nav">
-    <h1>Quiz Trilha</h1>
+    <h1><svg class="ic ic-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8618,11.2764 L10.8618,3.27639 C10.9465,3.107 11.1196,3 11.309,3 L17.0397,3 C17.4442,3 17.6813,3.45534 17.4493,3.78673 L15.0507,7.21327 C14.8187,7.54466 15.0558,8 15.4603,8 L16.9129,8 C17.3401,8 17.5705,8.50106 17.2925,8.8254 L7.96557,19.7068 C7.59763,20.1361 6.91173,19.7207 7.1217,19.1957 L9.72572,12.6857 C9.85709,12.3573 9.61522,12 9.26148,12 L7.30902,12 C6.93733,12 6.69558,11.6088 6.8618,11.2764 Z"/></svg>Quiz Trilha</h1>
     <div>
       <button class="btn btn-secondary" onclick="showScreen('screen-history')">Histórico</button>
     </div>
@@ -143,12 +149,12 @@ th,td{padding:8px 6px;font-size:.78rem}
     </div>
 
     <div style="margin-top:20px">
-      <button class="btn btn-success" style="width:100%;padding:16px;font-size:1.1rem" onclick="startRound()">▶ Começar</button>
+      <button class="btn btn-success" style="width:100%;padding:16px;font-size:1.1rem;display:flex;align-items:center;justify-content:center;gap:10px" onclick="startRound()"><svg class="ic" viewBox="0 0 96.155 96.155" aria-hidden="true"><path d="M20.972,95.594l57.605-45.951c0.951-0.76,0.951-2.367,0-3.127L20.968,0.56c-0.689-0.547-1.716-0.709-2.61-0.414c-0.186,0.061-0.33,0.129-0.436,0.186c-0.65,0.35-1.056,1.025-1.056,1.764v91.967c0,0.736,0.405,1.414,1.056,1.762c0.109,0.06,0.253,0.127,0.426,0.185C19.251,96.305,20.281,96.144,20.972,95.594z"/></svg>Começar</button>
     </div>
   </div>
 
   <div class="card">
-    <h2>📊 Conhecimento disponível</h2>
+    <h2><svg class="ic ic-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7C3 4.79086 4.79086 3 7 3H17C19.2091 3 21 4.79086 21 7V17C21 19.2091 19.2091 21 17 21H7C4.79086 21 3 19.2091 3 17V7Z"/><path d="M8 11L8 16"/><path d="M16 13L16 16"/><path d="M12 8L12 16"/></svg>Conhecimento disponível</h2>
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px">
       <span class="badge badge-java">Java · 10 questões</span>
       <span class="badge badge-python">Python · 8 questões</span>
@@ -181,7 +187,7 @@ th,td{padding:8px 6px;font-size:.78rem}
     <div class="feedback" id="feedback"></div>
     <div class="nav">
       <span></span>
-      <button class="btn btn-primary" id="btn-next" style="display:none" onclick="nextQuestion()">Próxima →</button>
+      <button class="btn btn-primary" id="btn-next" style="display:none" onclick="nextQuestion()">Próxima<svg class="ic ic-l" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7055 18.9112C14.2784 18.7306 14 18.3052 14 17.8333V15H3C2.44772 15 2 14.5523 2 14V10C2 9.44772 2.44772 9 3 9H14V6.1667C14 5.69483 14.2784 5.26942 14.7055 5.08884C15.1326 4.90826 15.6241 5.00808 15.951 5.34174L21.6653 11.175C22.1116 11.6307 22.1116 12.3693 21.6653 12.825L15.951 18.6583C15.6241 18.9919 15.1326 19.0917 14.7055 18.9112Z"/></svg></button>
     </div>
   </div>
 </div>
@@ -212,7 +218,7 @@ th,td{padding:8px 6px;font-size:.78rem}
 
 <!-- ============ TELA RESULTADO ============ -->
 <div class="screen" id="screen-result">
-  <h1>Resultado da rodada</h1>
+  <h1><svg class="ic ic-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8618,11.2764 L10.8618,3.27639 C10.9465,3.107 11.1196,3 11.309,3 L17.0397,3 C17.4442,3 17.6813,3.45534 17.4493,3.78673 L15.0507,7.21327 C14.8187,7.54466 15.0558,8 15.4603,8 L16.9129,8 C17.3401,8 17.5705,8.50106 17.2925,8.8254 L7.96557,19.7068 C7.59763,20.1361 6.91173,19.7207 7.1217,19.1957 L9.72572,12.6857 C9.85709,12.3573 9.61522,12 9.26148,12 L7.30902,12 C6.93733,12 6.69558,11.6088 6.8618,11.2764 Z"/></svg>Resultado da rodada</h1>
   <div class="stats" id="result-stats"></div>
 
   <div class="card">
@@ -236,7 +242,7 @@ th,td{padding:8px 6px;font-size:.78rem}
 <!-- ============ TELA HISTÓRICO ============ -->
 <div class="screen" id="screen-history">
   <div class="header-nav">
-    <h1>Histórico</h1>
+    <h1><svg class="ic ic-stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.8618,11.2764 L10.8618,3.27639 C10.9465,3.107 11.1196,3 11.309,3 L17.0397,3 C17.4442,3 17.6813,3.45534 17.4493,3.78673 L15.0507,7.21327 C14.8187,7.54466 15.0558,8 15.4603,8 L16.9129,8 C17.3401,8 17.5705,8.50106 17.2925,8.8254 L7.96557,19.7068 C7.59763,20.1361 6.91173,19.7207 7.1217,19.1957 L9.72572,12.6857 C9.85709,12.3573 9.61522,12 9.26148,12 L7.30902,12 C6.93733,12 6.69558,11.6088 6.8618,11.2764 Z"/></svg>Histórico</h1>
     <div>
       <button class="btn btn-danger" onclick="clearHistory()">Limpar</button>
       <button class="btn btn-secondary" onclick="showScreen('screen-home')">Voltar</button>
@@ -353,6 +359,13 @@ let state = {
 
 const SUBJECTS = ['Todas','Java','Python','SQL','AWS','Arquitetura'];
 
+// ============ ÍCONES (SVG Repo - https://www.svgrepo.com/) ============
+const ICO = {
+  arrow:'<svg class="ic ic-l" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7055 18.9112C14.2784 18.7306 14 18.3052 14 17.8333V15H3C2.44772 15 2 14.5523 2 14V10C2 9.44772 2.44772 9 3 9H14V6.1667C14 5.69483 14.2784 5.26942 14.7055 5.08884C15.1326 4.90826 15.6241 5.00808 15.951 5.34174L21.6653 11.175C22.1116 11.6307 22.1116 12.3693 21.6653 12.825L15.951 18.6583C15.6241 18.9919 15.1326 19.0917 14.7055 18.9112Z"/></svg>',
+  check:'<svg class="ic ic-r" viewBox="0 0 1920 1920" aria-hidden="true"><path fill-rule="evenodd" d="M1827.701 303.065 698.835 1431.801 92.299 825.266 0 917.564 698.835 1616.4 1919.869 395.234z"/></svg>',
+  cross:'<svg class="ic ic-r" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z"/></svg>'
+};
+
 // ============ NAVEGAÇÃO ============
 function showScreen(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
@@ -443,17 +456,17 @@ function answer(i,btn){
     state.correct++;
     btn.classList.add('correct');
     fb.className='feedback correct';
-    fb.innerHTML=`<strong>✓ Correto!</strong>${q.e}`;
+    fb.innerHTML=`<strong>${ICO.check}Correto!</strong>${q.e}`;
   } else {
     state.wrong.push(q);
     btn.classList.add('wrong');
     buttons[q.a].classList.add('correct');
     fb.className='feedback wrong';
-    fb.innerHTML=`<strong>✗ Incorreto. Resposta correta: ${String.fromCharCode(65+q.a)}) ${q.o[q.a]}</strong>${q.e}`;
+    fb.innerHTML=`<strong>${ICO.cross}Incorreto. Resposta correta: ${String.fromCharCode(65+q.a)}) ${q.o[q.a]}</strong>${q.e}`;
   }
   fb.style.display='block';
   document.getElementById('btn-next').style.display='inline-block';
-  document.getElementById('btn-next').textContent = state.index===state.queue.length-1?'Ver resultado →':'Próxima →';
+  document.getElementById('btn-next').innerHTML = (state.index===state.queue.length-1?'Ver resultado':'Próxima')+ICO.arrow;
 }
 function nextQuestion(){
   state.index++;
@@ -526,7 +539,7 @@ function renderResult(){
     document.getElementById('review-section').style.display='block';
     document.getElementById('review-list').innerHTML=state.wrong.map(q=>
       `<div class="review-item"><div class="q">${q.q}</div>
-       <div class="a">Sua resposta: ✗ | <span>Correta: ${q.o[q.a]}</span></div>
+       <div class="a">Sua resposta: ${ICO.cross}| <span>Correta: ${q.o[q.a]}</span></div>
        <div class="a" style="color:var(--muted);margin-top:6px">${q.e}</div></div>`).join('');
   } else {
     document.getElementById('review-section').style.display='none';
